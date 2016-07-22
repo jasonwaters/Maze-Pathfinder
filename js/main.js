@@ -1,5 +1,5 @@
 (function() {
-    axios.get('https://s3-us-west-1.amazonaws.com/circleup-challenge/maze.json')
+    axios.get('/data.json')
         .then(function (response) {
             if (response.status === 200) {
                 var maze = new Maze(response.data);
@@ -22,7 +22,7 @@
                             var node = searchNodes.shift();
                             maze.drawSolutionRect(node.y, node.x);
                         }
-                    }, 100);
+                    }, 10);
                 });
             }
         });
